@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+import Header from './components/Header';
+import TargetList from './components/TargetList';
+import TargetForm from './components/TargetForm';
+import Stats from './components/Stats';
+import { Container } from 'react-bootstrap';
+import { useState } from 'react'
+import data from './data';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  const [targetsData, setTargetsData] = useState(data);
+
+  const addTarget = (newTarget) => {
+    if (newTarget.text.length === 0) {
+      window.alert('Please Add Target!')
+    } else {
+    setTargetsData([newTarget, ...targetsData])
+  }}
+
+
+return (<>
+  <Header />
+   <Container>
+  <TargetForm handleAdd={addTarget}/>
+  <Stats targetsData={targetsData}/>
+  <TargetList targetsData={targetsData} />
+  </Container>
+  </>);
 }
 
 export default App;
