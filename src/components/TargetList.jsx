@@ -20,7 +20,7 @@ const TargerList = ({targetsData}) => {
       <hr style={{background: 'grey', height: '2px',}}/>
 
     {targetsData.length === 0 ?
-     <h5 className='text-danger'>Add Some Weekly Targets...</h5> :
+     <h5 className='text-muted'>Add Some Weekly Targets...</h5> :
      targetsData.map((item, index) => (
       <TargetItem
       key={index}
