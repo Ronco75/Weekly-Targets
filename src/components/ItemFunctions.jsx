@@ -4,7 +4,7 @@ import { Badge } from "react-bootstrap"
 
 // TODO: Check item
 
-const ItemFunctions = ({ item }) => {
+const ItemFunctions = ({ item, targetsData }) => {
 
   return (
     <div className="d-flex justify-content-between">

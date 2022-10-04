@@ -8,6 +8,7 @@ let weekNumber = Math.ceil((((now.getTime() - onejan.getTime()) / 86400000) + on
      
 const TargerList = ({targetsData}) => {
 
+
   return (<>
 
     <Card className='my-3' border='primary'>

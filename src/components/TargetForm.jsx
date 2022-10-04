@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Form, FloatingLabel, Button } from "react-bootstrap"
+const { v4: uuidv4 } = require('uuid');
 
 const TargetForm = ({ handleAdd, targetsData, setTargetsData }) => {
     const [text, setText] = useState('');
@@ -13,6 +14,7 @@ const TargetForm = ({ handleAdd, targetsData, setTargetsData }) => {
 
       const date = new Date().toLocaleString();
       const newTarget = {
+        id: uuidv4(),
         text,
         date,
         edit: false

@@ -5,14 +5,15 @@ const TargetItem = ({ item, targetsData }) => {
 
   //TODO: Edit item by double click.
 
-  const editItem = () => {
-    
+  const editItem = (e) => {
+    e.preventDefault();
+    console.log(item);
   }
 
   return (
     <ListGroup.Item 
     className="d-flex justify-content-between align-items-center"
-    onDoubleClick={editItem()}>
+    onDoubleClick={editItem}>
     <h4>{item.text}</h4>
       <ItemFunctions 
       item={item}

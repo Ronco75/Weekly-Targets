@@ -18,7 +18,6 @@ function App() {
     setTargetsData([newTarget, ...targetsData])
   }}
 
-
 return (<>
   <Header />
    <Container>

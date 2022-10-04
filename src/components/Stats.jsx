@@ -3,7 +3,6 @@ const Stats = ({targetsData}) => {
   
 // TODO: Change statsColor if targetsData.length === 0
   
-  console.log(targetsData.length);
 
   let statsColor = '';
 
