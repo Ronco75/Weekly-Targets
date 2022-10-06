@@ -20,8 +20,9 @@ function App() {
 
   const deleteTarget = (e, id) => {
     e.preventDefault();
-    setTargetsData(targetsData.filter((item) => item.id !== id))
+    setTargetsData(targetsData.filter((item) => item.id !== id));
   }
+
 
 return (<>
   <Header />
