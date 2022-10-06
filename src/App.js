@@ -18,12 +18,18 @@ function App() {
     setTargetsData([newTarget, ...targetsData])
   }}
 
+  const deleteTarget = (e, id) => {
+    e.preventDefault();
+    setTargetsData(targetsData.filter((item) => item.id !== id))
+  }
+
 return (<>
   <Header />
    <Container>
   <TargetForm handleAdd={addTarget}/>
   <Stats targetsData={targetsData}/>
-  <TargetList targetsData={targetsData} />
+  <TargetList targetsData={targetsData}
+  handleDelete={deleteTarget} />
   </Container>
   </>);
 }
