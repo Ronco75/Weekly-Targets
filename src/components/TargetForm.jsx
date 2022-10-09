@@ -1,29 +1,10 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+import DataContext from '../context/DataContext'
 import { Form, FloatingLabel, Button } from "react-bootstrap"
-const { v4: uuidv4 } = require('uuid');
 
-const TargetForm = ({ handleAdd, targetsData, setTargetsData }) => {
-    const [text, setText] = useState('');
+const TargetForm = () => {
 
-    const handleTextChange = (e) => {
-      setText(e.target.value);
-    }
-
-    const handleSubmit = (e) => {
-      e.preventDefault();
-
-      const date = new Date().toLocaleString();
-      const newTarget = {
-        id: uuidv4(),
-        text,
-        date,
-        edit: false
-      }
-      handleAdd(newTarget);
-      setText('');
-    }
-
-  // const { targetsData, addTarget, handleSubmit, handleTextChange } = useContext(DataContext);
+  const { text, handleSubmit, handleTextChange } = useContext(DataContext);
 
 
   return (

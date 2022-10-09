@@ -43,7 +43,6 @@ export const DataProvider = ({children}) =>  {
       id: uuidv4(),
       text,
       date,
-      edit: false
     }
     addTarget(newTarget);
     setText('');
@@ -53,6 +52,7 @@ export const DataProvider = ({children}) =>  {
     return <DataContext.Provider value={{
         //* name of the functions.
         targetsData,
+        text,
         addTarget,
         deleteTarget,
         editTarget,
