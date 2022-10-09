@@ -23,6 +23,8 @@ const TargetForm = ({ handleAdd, targetsData, setTargetsData }) => {
       setText('');
     }
 
+  // const { targetsData, addTarget, handleSubmit, handleTextChange } = useContext(DataContext);
+
 
   return (
       <>

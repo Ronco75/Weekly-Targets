@@ -1,16 +1,18 @@
+import { useContext } from 'react'
+import DataContext from '../context/DataContext'
 import { ListGroup } from "react-bootstrap"
-// import ItemFunctions from "./ItemFunctions"
 import TargetDate from "./TargetDate"
 import { FaCheck } from "react-icons/fa"
 import { Badge } from "react-bootstrap"
 
-const TargetItem = ({ item, handleDelete }) => {
+const TargetItem = ({ item, handleDelete, handleEdit }) => {
 
-  //TODO: Edit item by double click.
+  // const { item, handleDelete, handleEdit } = useContext(DataContext)
 
   return (
     <ListGroup.Item 
-    className="d-flex justify-content-between align-items-center">
+    className="d-flex justify-content-between align-items-center"
+    onDoubleClick={() => handleEdit(item.id)} >
     <h4>{item.text}</h4>
 
       <div className="d-flex justify-content-between">

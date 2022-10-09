@@ -1,0 +1,66 @@
+import { createContext, useState } from "react";
+import data from '../data';
+const { v4: uuidv4 } = require('uuid');
+
+const DataContext = createContext();
+
+export const DataProvider = ({children}) =>  {
+
+    //* all the functions and hooks.
+
+  const [targetsData, setTargetsData] = useState(data);
+  const [text, setText] = useState('');
+
+  const addTarget = (newTarget) => {
+    if (newTarget.text.length === 0) {
+      window.alert('Please Add Target!')
+    } else {
+    setTargetsData([newTarget, ...targetsData])
+  }}
+
+  const deleteTarget = (e, id) => {
+    e.preventDefault();
+    setTargetsData(targetsData.filter((item) => item.id !== id));
+  }
+
+  //TODO: Edit item by double click.
+  //! Continue from here
+  const editTarget = (id) => {
+    console.log(id);
+  }
+
+
+  const handleTextChange = (e) => {
+    setText(e.target.value);
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const date = new Date().toLocaleString();
+    
+    const newTarget = {
+      id: uuidv4(),
+      text,
+      date,
+      edit: false
+    }
+    addTarget(newTarget);
+    setText('');
+  }
+
+
+    return <DataContext.Provider value={{
+        //* name of the functions.
+        targetsData,
+        addTarget,
+        deleteTarget,
+        editTarget,
+        handleTextChange,
+        handleSubmit
+    }}>
+        {children}
+    </DataContext.Provider>
+}
+
+export default DataContext;

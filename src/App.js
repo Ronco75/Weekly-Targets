@@ -6,6 +6,8 @@ import Stats from './components/Stats';
 import { Container } from 'react-bootstrap';
 import { useState } from 'react'
 import data from './data';
+import { DataProvider } from './context/DataContext';
+
 
 function App() {
 
@@ -23,16 +25,21 @@ function App() {
     setTargetsData(targetsData.filter((item) => item.id !== id));
   }
 
+  //! Continue from here
+  const editTarget = (id) => {
+    console.log(id);
+  }
 
-return (<>
+
+return (<DataProvider>
   <Header />
    <Container>
   <TargetForm handleAdd={addTarget}/>
-  <Stats targetsData={targetsData}/>
-  <TargetList targetsData={targetsData}
-  handleDelete={deleteTarget} />
+  <Stats/>
+  <TargetList handleDelete={deleteTarget}
+  handleEdit={editTarget} />
   </Container>
-  </>);
+  </DataProvider>);
 }
 
 export default App;

@@ -1,8 +1,9 @@
+import { useContext } from 'react'
+import DataContext from '../context/DataContext'
 
-const Stats = ({targetsData}) => {
+const Stats = () => {
   
-// TODO: Change statsColor if targetsData.length === 0
-  
+  const {targetsData} = useContext(DataContext);
 
   let statsColor = '';
 
