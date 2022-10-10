@@ -7,7 +7,7 @@ import { Badge } from "react-bootstrap"
 
 const TargetItem = ({ item }) => {
 
-  const { deleteTarget } = useContext(DataContext)
+  const { deleteTarget } = useContext(DataContext);
 
   return (
     <ListGroup.Item 

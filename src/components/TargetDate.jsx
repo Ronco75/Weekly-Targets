@@ -1,5 +1,6 @@
 const TargetDate = () => {
 
+  
       // Set today date
       let today = new Date();
       let dd = String(today.getDate()).padStart(2, '0');
@@ -10,9 +11,7 @@ const TargetDate = () => {
       // TODO: after 7 days the TargetItem will be deleted
 
       let date = new Date();
-      date.setDate(date.getDate() + 7);
-
-      // console.log(date);
+      let datePlusSevenDays = date.toLocaleDateString(date.setDate(date.getDate() + 7));
 
 
   return (
