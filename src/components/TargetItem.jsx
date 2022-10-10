@@ -7,12 +7,11 @@ import { Badge } from "react-bootstrap"
 
 const TargetItem = ({ item }) => {
 
-  const { deleteTarget, editTarget } = useContext(DataContext)
+  const { deleteTarget } = useContext(DataContext)
 
   return (
     <ListGroup.Item 
-    className="d-flex justify-content-between align-items-center"
-    onDoubleClick={() => editTarget(item.id)} >
+    className="d-flex justify-content-between align-items-center">
     <h4>{item.text}</h4>
 
       <div className="d-flex justify-content-between">

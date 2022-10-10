@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import DataContext from '../context/DataContext'
 import { Form, FloatingLabel, Button } from "react-bootstrap"
 
@@ -22,7 +22,7 @@ const TargetForm = () => {
     </FloatingLabel>
 
   <Button variant="primary" type="submit">
-    Add
+    Add Target
   </Button>
 </Form>
 </>

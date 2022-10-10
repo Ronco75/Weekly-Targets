@@ -11,6 +11,7 @@ export const DataProvider = ({children}) =>  {
   const [targetsData, setTargetsData] = useState(data);
   const [text, setText] = useState('');
 
+
   const addTarget = (newTarget) => {
     if (newTarget.text.length === 0) {
       window.alert('Please Add Target!')
@@ -22,13 +23,6 @@ export const DataProvider = ({children}) =>  {
     e.preventDefault();
     setTargetsData(targetsData.filter((item) => item.id !== id));
   }
-
-  //TODO: Edit item by double click.
-  //! Continue from here
-  const editTarget = (id) => {
-    console.log(id);
-  }
-
 
   const handleTextChange = (e) => {
     setText(e.target.value);
@@ -44,7 +38,9 @@ export const DataProvider = ({children}) =>  {
       text,
       date,
     }
+
     addTarget(newTarget);
+
     setText('');
   }
 
@@ -53,11 +49,11 @@ export const DataProvider = ({children}) =>  {
         //* name of the functions.
         targetsData,
         text,
+        setText,
         addTarget,
         deleteTarget,
-        editTarget,
         handleTextChange,
-        handleSubmit
+        handleSubmit,
     }}>
         {children}
     </DataContext.Provider>
