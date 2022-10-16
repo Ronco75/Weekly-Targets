@@ -24,6 +24,10 @@ export const DataProvider = ({children}) =>  {
     setTargetsData(targetsData.filter((item) => item.id !== id));
   }
 
+  const deleteAfterSevenDays = (date) => {
+    console.log(date);
+  }
+
   const handleTextChange = (e) => {
     setText(e.target.value);
   }
@@ -54,6 +58,7 @@ export const DataProvider = ({children}) =>  {
         deleteTarget,
         handleTextChange,
         handleSubmit,
+        deleteAfterSevenDays
     }}>
         {children}
     </DataContext.Provider>

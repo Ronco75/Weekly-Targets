@@ -16,8 +16,7 @@ const Stats = () => {
   return (
 
         <h6 className={statsColor}>
-        This Week Targets:
-         {targetsData.length}
+        This Week Targets: {targetsData.length}
          </h6>
   )
 }

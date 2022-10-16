@@ -1,5 +1,14 @@
+import { useContext, useEffect } from 'react'
+import DataContext from '../context/DataContext'
+
 const TargetDate = () => {
 
+  const { deleteAfterSevenDays, addTarget } = useContext(DataContext);
+
+  useEffect(() => {
+    deleteAfterSevenDays(datePlusSevenDays)
+  },[addTarget])
+  
   
       // Set today date
       let today = new Date();

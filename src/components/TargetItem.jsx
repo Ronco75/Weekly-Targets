@@ -1,9 +1,8 @@
 import { useContext } from 'react'
 import DataContext from '../context/DataContext'
-import { ListGroup } from "react-bootstrap"
+import { ListGroup, Badge } from "react-bootstrap"
 import TargetDate from "./TargetDate"
 import { FaCheck } from "react-icons/fa"
-import { Badge } from "react-bootstrap"
 
 const TargetItem = ({ item }) => {
 
