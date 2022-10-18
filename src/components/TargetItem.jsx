@@ -15,7 +15,8 @@ const TargetItem = ({ item }) => {
 
       <div className="d-flex justify-content-between">
     <Badge bg="danger" pill>
-     <TargetDate />
+     <TargetDate 
+     item={item}/>
    </Badge>
 
    <button style={{border: 'none', backgroundColor: '#fff'}}
